@@ -103,7 +103,7 @@
     #hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(170deg, rgba(30,10,15,0.65) 0%, rgba(92,18,32,0.82) 55%, rgba(30,5,10,0.96) 100%); }
     /* Línea dorada vertical decorativa */
     .hero-accent { position: absolute; left: 5%; top: 0; width: 1px; height: 100%; background: linear-gradient(to bottom, transparent, var(--gold) 25%, var(--gold) 75%, transparent); opacity: 0.25; z-index: 1; }
-    .hero-inner { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr auto; gap: 5rem; align-items: center; }
+    .hero-inner { position: relative; z-index: 2; max-width: 1300px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
     .hero-left { }
     .hero-eyebrow { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.8rem; }
     .hero-eyebrow-line { width: 28px; height: 1px; background: var(--gold); opacity: 0.7; }
@@ -111,7 +111,7 @@
     /* Logo centrado en hero */
     .hero-logo { margin-bottom: 2rem; }
     .hero-logo img { height: 80px; filter: var(--logo-filter-lt); opacity: 0.85; }
-    h1.hero-h1 { font-family: var(--font-serif); font-size: clamp(2.6rem, 5.5vw, 5.5rem); font-weight: 300; color: var(--white); line-height: 1.05; margin-bottom: 0.4rem; letter-spacing: 0.01em; }
+    h1.hero-h1 { font-family: var(--font-serif); font-size: clamp(2.6rem, 4.5vw, 4.8rem); font-weight: 300; color: var(--white); line-height: 1.05; margin-bottom: 0.4rem; letter-spacing: 0.01em; }
     h1.hero-h1 strong { font-weight: 600; }
     h1.hero-h1 em { font-style: italic; color: rgba(255,255,255,0.55); }
     .hero-subtitle { font-family: var(--font-sc); font-size: 0.7rem; letter-spacing: 0.28em; color: var(--gold-lt); margin-bottom: 2rem; opacity: 0.85; }
@@ -228,14 +228,15 @@
     .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
     .f-group { margin-bottom: 0.8rem; }
     .f-group label { display: block; font-family: var(--font-sc); font-size: 0.52rem; letter-spacing: 0.22em; color: rgba(255,255,255,0.35); margin-bottom: 0.4rem; }
-    .f-group input, .f-group select, .f-group textarea { width: 100%; padding: 0.82rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(184,148,42,0.3); color: var(--white); font-family: var(--font-body); font-size: 0.87rem; outline: none; transition: border-color 0.3s; appearance: auto; }
+    .f-group input, .f-group textarea { width: 100%; padding: 0.82rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(184,148,42,0.3); color: var(--white); font-family: var(--font-body); font-size: 0.87rem; outline: none; transition: border-color 0.3s; }
+    .f-group select { width: 100%; padding: 0.82rem 3rem 0.82rem 1rem; background: rgba(255,255,255,0.05) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23b8942a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 1.2rem center; border: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(184,148,42,0.3); color: var(--white); font-family: var(--font-body); font-size: 0.87rem; outline: none; transition: border-color 0.3s; appearance: none; -webkit-appearance: none; cursor: pointer; }
+    .f-group select option { background: var(--burgundy-dk); }
     .f-group input::placeholder, .f-group textarea::placeholder { color: rgba(255,255,255,0.2); }
     .f-group input:focus, .f-group select:focus, .f-group textarea:focus { border-bottom-color: var(--gold-lt); }
-    .f-group select option { background: var(--burgundy-dk); }
     .f-group textarea { resize: vertical; min-height: 100px; }
     .f-submit { width: 100%; margin-top: 0.5rem; }
     /* Info contacto */
-    .contacto-info { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; text-align: center; }
+    .contacto-info { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 4rem; margin-top: 4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; text-align: center; }
     .c-info-item span { font-family: var(--font-sc); font-size: 0.55rem; letter-spacing: 0.24em; color: rgba(184,148,42,0.65); display: block; margin-bottom: 0.5rem; }
     .c-info-item p { font-size: 0.86rem; color: rgba(255,255,255,0.6); font-weight: 300; line-height: 1.5; }
     .c-info-item a { color: rgba(255,255,255,0.6); transition: color 0.25s; }
@@ -358,8 +359,8 @@
       <div class="hero-logo">
         <img src="./logo.png" alt="Dr. Pablo González & Asoc." />
       </div>
-      <h1 class="hero-h1"><em>Estudio Jurídico</em><br/><strong>Dr. Pablo Adrián González</strong><br/><em>&amp; Asociados</em></h1>
-      <div class="hero-subtitle">Desde 1973 &middot; CABA y Provincia de Buenos Aires</div>
+      <h1 class="hero-h1"><strong>Estudio Jurídico</strong><br/><strong>Dr. Pablo Adrián González</strong><br/><strong>&amp; Asociados</strong></h1>
+      <div class="hero-subtitle"><span style="font-family:var(--font-serif);font-size:clamp(1.6rem,3vw,2.8rem);font-weight:300;font-style:italic;color:var(--gold-lt);letter-spacing:0.04em;display:block;line-height:1;">Desde 1973</span><span style="font-family:var(--font-sc);font-size:0.7rem;letter-spacing:0.28em;color:rgba(255,255,255,0.45);display:block;margin-top:0.4rem;">CABA y Pcia. de Buenos Aires</span></div>
       <p class="hero-lead">Más de 50 años al servicio de nuestros clientes. Resolvemos sus problemáticas legales de manera rápida y efectiva, con un equipo de profesionales especializados en distintas áreas del Derecho.</p>
       <div class="hero-ctas">
         <a href="#contacto" class="btn btn-gold">Agendar consulta</a>
@@ -390,6 +391,7 @@
   <div class="ticker-track">
     <div class="ticker-item"><div class="ticker-dot"></div>Derecho Civil y Familiar</div>
     <div class="ticker-item"><div class="ticker-dot"></div>Derecho Laboral</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Derecho Penal</div>
     <div class="ticker-item"><div class="ticker-dot"></div>Derecho Comercial</div>
     <div class="ticker-item"><div class="ticker-dot"></div>Derecho Inmobiliario</div>
     <div class="ticker-item"><div class="ticker-dot"></div>Derecho Administrativo</div>
@@ -397,6 +399,7 @@
     <div class="ticker-item"><div class="ticker-dot"></div>CABA y Provincia de Bs. As.</div>
     <div class="ticker-item"><div class="ticker-dot"></div>Derecho Civil y Familiar</div>
     <div class="ticker-item"><div class="ticker-dot"></div>Derecho Laboral</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Derecho Penal</div>
     <div class="ticker-item"><div class="ticker-dot"></div>Derecho Comercial</div>
     <div class="ticker-item"><div class="ticker-dot"></div>Derecho Inmobiliario</div>
     <div class="ticker-item"><div class="ticker-dot"></div>Derecho Administrativo</div>
@@ -451,9 +454,9 @@
         <div class="area-num">I</div>
         <h3>Civil y Familiar</h3>
         <ul class="area-list">
-          <li>Divorcios y separaciones</li>
-          <li>Alimentos y cuidado personal</li>
-          <li>Sucesiones y herencias</li>
+          <li>Divorcios</li>
+          <li>Alimentos</li>
+          <li>Violencia familiar</li>
           <li>Da&ntilde;os y perjuicios</li>
           <li>Contratos civiles</li>
         </ul>
@@ -462,10 +465,10 @@
         <div class="area-num">II</div>
         <h3>Derecho Laboral</h3>
         <ul class="area-list">
-          <li>Despidos e indemnizaciones</li>
+          <li>Despidos</li>
           <li>Accidentes de trabajo</li>
+          <li>Enfermedades profesionales</li>
           <li>Reclamos laborales</li>
-          <li>Asesoramiento a empleadores</li>
         </ul>
       </div>
       <div class="area-card stagger-child">
@@ -496,6 +499,17 @@
           <li>Contratos con el Estado</li>
           <li>Responsabilidad del Estado</li>
           <li>Habilitaciones y permisos</li>
+        </ul>
+      </div>
+      <div class="area-card stagger-child">
+        <div class="area-num">VI</div>
+        <h3>Derecho Penal</h3>
+        <ul class="area-list">
+          <li>Excarcelaciones</li>
+          <li>Defensas penales</li>
+          <li>H&aacute;beas corpus</li>
+          <li>Querellas criminales</li>
+          <li>Violencia de g&eacute;nero</li>
         </ul>
       </div>
       <div class="area-card stagger-child" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
