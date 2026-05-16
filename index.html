@@ -135,7 +135,11 @@
     #sobre { padding: 110px 5%; background: var(--cream); position: relative; overflow: hidden; }
     #sobre::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(184,148,42,0.08) 1.5px, transparent 1.5px); background-size: 26px 26px; pointer-events: none; }
     #sobre::after { content: ''; position: absolute; top: 0; right: 0; width: 38%; height: 100%; background: radial-gradient(ellipse at right, rgba(124,29,46,0.05) 0%, transparent 65%); pointer-events: none; }
-    .sobre-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
+    .sobre-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 0.7fr 1fr; gap: 5rem; align-items: center; }
+    .sobre-foto { position: relative; overflow: hidden; }
+    .sobre-foto img { width: 100%; height: 480px; object-fit: cover; object-position: center top; display: block; }
+    .sobre-foto::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(92,18,32,0.55) 0%, rgba(124,29,46,0.3) 50%, rgba(92,18,32,0.7) 100%); }
+    .sobre-foto::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 45%; background: linear-gradient(to top, rgba(92,18,32,0.9) 0%, transparent 100%); z-index: 1; }
     /* Logo en sección clara */
     .sobre-logo { margin-bottom: 2rem; }
     .sobre-logo img { height: 88px; filter: var(--logo-filter); opacity: 0.9; }
@@ -283,6 +287,8 @@
       .hero-inner { grid-template-columns: 1fr; }
       .hero-right { display: none; }
       .sobre-inner { grid-template-columns: 1fr; gap: 3.5rem; text-align: center; }
+      .sobre-foto { order: -1; }
+      .sobre-foto img { height: 300px; }
       .sobre-rule { margin: 1.2rem auto; }
       .areas-grid { grid-template-columns: repeat(2, 1fr); }
       .testi-grid { grid-template-columns: 1fr 1fr; }
@@ -435,7 +441,10 @@
       <p>Nos desempe&ntilde;amos en diversas &aacute;reas del derecho atendiendo casos tanto en <strong>CABA como en toda la Provincia de Buenos Aires</strong>.</p>
       <a href="#contacto" class="btn btn-burg" style="margin-top:0.8rem;">Agendar consulta</a>
     </div>
-    <div class="sobre-right reveal-right" style="transition-delay:0.12s">
+    <div class="sobre-foto reveal" style="transition-delay:0.08s">
+      <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&q=80" alt="Abogado" />
+    </div>
+    <div class="sobre-right reveal-right" style="transition-delay:0.16s">
       <div class="sobre-item">
         <div class="sobre-item-icon"><i class="fa-solid fa-handshake"></i></div>
         <div><h4>Confianza</h4><p>Construida en m&aacute;s de 50 a&ntilde;os de relaciones con nuestros clientes. Su problema es nuestra prioridad.</p></div>
@@ -636,6 +645,7 @@
             <option value="">Seleccionar &aacute;rea</option>
             <option>Civil y Familiar</option>
             <option>Derecho Laboral</option>
+            <option>Derecho Penal</option>
             <option>Comercial / Corporativo</option>
             <option>Derecho Inmobiliario</option>
             <option>Derecho Administrativo</option>
@@ -687,6 +697,7 @@
       <ul>
         <li><a href="#areas">Civil y Familiar</a></li>
         <li><a href="#areas">Laboral</a></li>
+        <li><a href="#areas">Penal</a></li>
         <li><a href="#areas">Comercial</a></li>
         <li><a href="#areas">Inmobiliario</a></li>
         <li><a href="#areas">Administrativo</a></li>
