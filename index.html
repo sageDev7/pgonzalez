@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estudio Jurídico Dr. Pablo A. González & Asoc. — Desde 1973</title>
+  <meta name="description" content="Estudio Jurídico Dr. Pablo Adrián González & Asociados. Desde 1973 al servicio de nuestros clientes. Civil, Laboral, Comercial, Inmobiliario y Administrativo. CABA y Provincia de Buenos Aires." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --burgundy:    #7c1d2e;
+      --burgundy-dk: #5c1220;
+      --burgundy-lt: #a02840;
+      --gold:        #b8942a;
+      --gold-lt:     #d4ad4a;
+      --gray-dk:     #1e1e1e;
+      --gray:        #3a3a3a;
+      --gray-md:     #6b6b6b;
+      --gray-lt:     #a0a0a0;
+      --silver:      #d4d4d4;
+      --cream:       #f7f4ef;
+      --cream-dk:    #ede9e1;
+      --white:       #ffffff;
+      --border:      rgba(184,148,42,0.18);
+      --border-dk:   rgba(124,29,46,0.15);
+      --font-serif:  'Cormorant Garamond', Georgia, serif;
+      --font-sc:     'Cormorant SC', Georgia, serif;
+      --font-body:   'DM Sans', sans-serif;
+      /* Logo dorado — filter CSS */
+      --logo-filter: brightness(0) saturate(100%) invert(65%) sepia(35%) saturate(800%) hue-rotate(5deg) brightness(0.88);
+      /* Logo crema/blanco */
+      --logo-filter-lt: brightness(0) saturate(100%) invert(95%) sepia(5%) saturate(200%) brightness(1.1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--white); color: var(--gray); overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ── UTILS ── */
+    .eyebrow { font-family: var(--font-sc); font-size: 0.72rem; letter-spacing: 0.28em; color: var(--gold); display: block; margin-bottom: 0.8rem; }
+    .rule { width: 40px; height: 2px; background: var(--burgundy); display: block; }
+    .rule-gold { width: 40px; height: 2px; background: var(--gold); display: block; }
+    .rule.center, .rule-gold.center { margin: 0 auto; }
+
+    /* ── BOTONES ── */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; font-family: var(--font-sc); font-size: 0.78rem; letter-spacing: 0.18em; padding: 1rem 2.4rem; cursor: pointer; border: none; transition: all 0.35s cubic-bezier(0.4,0,0.2,1); }
+    .btn-burg { background: var(--burgundy); color: var(--white); }
+    .btn-burg:hover { background: var(--burgundy-dk); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,29,46,0.3); }
+    .btn-outline { background: transparent; color: var(--burgundy); border: 1px solid var(--border-dk); }
+    .btn-outline:hover { background: var(--burgundy); color: var(--white); transform: translateY(-2px); }
+    .btn-outline-lt { background: transparent; color: var(--cream); border: 1px solid rgba(247,244,239,0.35); }
+    .btn-outline-lt:hover { background: rgba(247,244,239,0.1); border-color: var(--cream); transform: translateY(-2px); }
+    .btn-gold { background: var(--gold); color: var(--white); }
+    .btn-gold:hover { background: var(--gold-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(184,148,42,0.3); }
+
+    /* ── TEXTLOGO — replica el logo tipográfico ── */
+    .textlogo { display: flex; flex-direction: column; align-items: flex-start; }
+    .textlogo-top { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 400; font-style: italic; color: var(--gold); letter-spacing: 0.04em; line-height: 1; }
+    .textlogo-bot { font-family: var(--font-sc); font-size: 0.72rem; letter-spacing: 0.14em; color: var(--gray-dk); line-height: 1.3; margin-top: 0.2rem; }
+    .textlogo-lt .textlogo-bot { color: rgba(255,255,255,0.82); }
+
+    /* ── HEADER ── */
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 1002; padding: 1.2rem 5%; display: flex; align-items: center; justify-content: center; gap: 2.5rem; transition: background 0.45s, backdrop-filter 0.45s, box-shadow 0.45s; }
+    header.scrolled { background: var(--burgundy-dk); backdrop-filter: blur(16px); box-shadow: 0 1px 0 rgba(184,148,42,0.15); }
+    .h-logo { opacity: 0; pointer-events: none; transition: opacity 0.4s; display: flex; align-items: center; flex-shrink: 0; }
+    header.scrolled .h-logo { opacity: 1; pointer-events: auto; }
+    .h-logo img { height: 42px; filter: var(--logo-filter-lt); }
+    header.scrolled .h-logo img { filter: var(--logo-filter-lt); }
+    .h-logo-sep { width: 1px; height: 28px; background: rgba(255,255,255,0.15); flex-shrink: 0; }
+    header.scrolled .h-logo-sep { background: rgba(255,255,255,0.12); }
+    nav { display: flex; align-items: center; gap: 2rem; }
+    nav a { font-family: var(--font-sc); font-size: 0.75rem; letter-spacing: 0.18em; color: rgba(255,255,255,0.78); transition: color 0.25s; }
+    nav a:hover { color: var(--white); }
+    header.scrolled nav a { color: rgba(255,255,255,0.65); }
+    header.scrolled nav a:hover { color: var(--white); }
+    .nav-cta { background: var(--gold); color: var(--white) !important; padding: 0.6rem 1.4rem; }
+    .nav-cta:hover { background: var(--gold-lt) !important; }
+    header.scrolled .nav-cta { background: var(--gold); }
+
+    /* Hamburger */
+    #hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; z-index: 1003; }
+    #hamburger span { display: block; width: 22px; height: 1.5px; background: var(--white); transition: transform 0.3s, opacity 0.3s; }
+    #hamburger.dark span { background: var(--white); }
+    #hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    #hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    #hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    #mobile-nav { position: fixed; top: 0; left: 0; right: 0; background: var(--white); border-bottom: 2px solid var(--burgundy); padding: 78px 5% 2rem; display: flex; flex-direction: column; gap: 0; z-index: 1001; transform: translateY(-110%); transition: transform 0.38s cubic-bezier(0.4,0,0.2,1); box-shadow: 0 8px 24px rgba(124,29,46,0.1); }
+    #mobile-nav.open { transform: translateY(0); }
+    #mobile-nav a { font-family: var(--font-sc); font-size: 0.82rem; letter-spacing: 0.14em; color: var(--gray-md); padding: 0.9rem 0; border-bottom: 1px solid var(--border-dk); transition: color 0.25s; }
+    #mobile-nav a:last-child { border-bottom: none; color: var(--burgundy); }
+    #mobile-nav a:hover { color: var(--burgundy); }
+
+    /* ── HERO ── */
+    #hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 0 5%; }
+    #hero::before { content: ''; position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=1800&q=80'); background-size: cover; background-position: center 30%; filter: grayscale(30%) brightness(0.45); }
+    #hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(170deg, rgba(30,10,15,0.65) 0%, rgba(92,18,32,0.82) 55%, rgba(30,5,10,0.96) 100%); }
+    /* Línea dorada vertical decorativa */
+    .hero-accent { position: absolute; left: 5%; top: 0; width: 1px; height: 100%; background: linear-gradient(to bottom, transparent, var(--gold) 25%, var(--gold) 75%, transparent); opacity: 0.25; z-index: 1; }
+    .hero-inner { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr auto; gap: 5rem; align-items: center; }
+    .hero-left { }
+    .hero-eyebrow { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.8rem; }
+    .hero-eyebrow-line { width: 28px; height: 1px; background: var(--gold); opacity: 0.7; }
+    .hero-eyebrow span { font-family: var(--font-sc); font-size: 0.6rem; letter-spacing: 0.36em; color: var(--gold-lt); }
+    /* Logo centrado en hero */
+    .hero-logo { margin-bottom: 2rem; }
+    .hero-logo img { height: 80px; filter: var(--logo-filter-lt); opacity: 0.85; }
+    h1.hero-h1 { font-family: var(--font-serif); font-size: clamp(2.6rem, 5.5vw, 5.5rem); font-weight: 300; color: var(--white); line-height: 1.05; margin-bottom: 0.4rem; letter-spacing: 0.01em; }
+    h1.hero-h1 strong { font-weight: 600; }
+    h1.hero-h1 em { font-style: italic; color: rgba(255,255,255,0.55); }
+    .hero-subtitle { font-family: var(--font-sc); font-size: 0.7rem; letter-spacing: 0.28em; color: var(--gold-lt); margin-bottom: 2rem; opacity: 0.85; }
+    .hero-lead { font-size: 0.92rem; color: rgba(255,255,255,0.52); line-height: 1.9; font-weight: 300; max-width: 520px; margin-bottom: 2.6rem; }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    /* Datos derecha */
+    .hero-right { display: flex; flex-direction: column; gap: 1.6rem; align-self: flex-end; padding-bottom: 0.4rem; }
+    .hero-stat { text-align: right; }
+    .hero-stat-num { font-family: var(--font-serif); font-size: 2.8rem; font-weight: 300; font-style: italic; color: var(--gold-lt); line-height: 1; }
+    .hero-stat-label { font-family: var(--font-sc); font-size: 0.55rem; letter-spacing: 0.2em; color: rgba(255,255,255,0.38); margin-top: 0.2rem; }
+    .hero-sep { width: 1px; height: 24px; background: rgba(255,255,255,0.1); align-self: flex-end; }
+
+    /* ── TICKER ── */
+    .ticker-wrap { background: var(--burgundy-dk); overflow: hidden; padding: 0.82rem 0; }
+    .ticker-track { display: flex; gap: 3rem; animation: ticker 36s linear infinite; width: max-content; }
+    .ticker-item { display: flex; align-items: center; gap: 0.85rem; font-family: var(--font-sc); font-size: 0.72rem; letter-spacing: 0.2em; color: rgba(255,255,255,0.45); white-space: nowrap; flex-shrink: 0; }
+    .ticker-dot { width: 3px; height: 3px; background: var(--gold); border-radius: 50%; opacity: 0.6; flex-shrink: 0; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── SOBRE ── */
+    #sobre { padding: 110px 5%; background: var(--cream); position: relative; overflow: hidden; }
+    #sobre::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(184,148,42,0.08) 1.5px, transparent 1.5px); background-size: 26px 26px; pointer-events: none; }
+    #sobre::after { content: ''; position: absolute; top: 0; right: 0; width: 38%; height: 100%; background: radial-gradient(ellipse at right, rgba(124,29,46,0.05) 0%, transparent 65%); pointer-events: none; }
+    .sobre-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
+    /* Logo en sección clara */
+    .sobre-logo { margin-bottom: 2rem; }
+    .sobre-logo img { height: 88px; filter: var(--logo-filter); opacity: 0.9; }
+    .sobre-left h2 { font-family: var(--font-serif); font-size: clamp(2.2rem, 4vw, 4rem); font-weight: 400; color: var(--gray-dk); line-height: 1.05; }
+    .sobre-left h2 em { font-style: italic; color: var(--burgundy); }
+    .sobre-rule { width: 40px; height: 2px; background: var(--gold); display: block; margin: 1.2rem 0 1.8rem; }
+    .sobre-left p { font-size: 0.9rem; color: var(--gray-md); line-height: 1.95; font-weight: 300; margin-bottom: 1rem; }
+    .sobre-left p strong { color: var(--gray-dk); font-weight: 600; }
+    .sobre-left .btn { margin-top: 0.8rem; }
+    .sobre-right { display: flex; flex-direction: column; gap: 1px; background: var(--border); }
+    .sobre-item { background: var(--cream); padding: 1.8rem 2rem; display: flex; gap: 1.4rem; align-items: flex-start; transition: background 0.3s, padding-left 0.3s; }
+    .sobre-item:hover { background: var(--white); padding-left: 2.4rem; }
+    .sobre-item-icon { width: 36px; height: 36px; background: var(--burgundy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .sobre-item-icon i { color: var(--white); font-size: 0.82rem; }
+    .sobre-item h4 { font-family: var(--font-sc); font-size: 0.72rem; letter-spacing: 0.14em; color: var(--gray-dk); margin-bottom: 0.25rem; }
+    .sobre-item p { font-size: 0.84rem; color: var(--gray-md); line-height: 1.6; font-weight: 300; }
+
+    /* ── ÁREAS ── */
+    #areas { padding: 110px 5%; background: var(--gray-dk); position: relative; overflow: hidden; }
+    #areas::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(-60deg, transparent, transparent 52px, rgba(184,148,42,0.04) 52px, rgba(184,148,42,0.04) 53px); }
+    #areas::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.4; }
+    .areas-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+    .areas-header { text-align: center; margin-bottom: 4rem; }
+    .areas-header h2 { font-family: var(--font-serif); font-size: clamp(2.2rem, 4vw, 4rem); font-weight: 400; color: var(--white); line-height: 1.05; }
+    .areas-header h2 em { font-style: italic; color: var(--gold-lt); }
+    .areas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.05); }
+    .area-card { background: var(--gray-dk); padding: 2.8rem 2.4rem; position: relative; overflow: hidden; transition: background 0.35s; }
+    .area-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--burgundy); transform: scaleX(0); transform-origin: left; transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); }
+    .area-card:hover { background: rgba(255,255,255,0.03); }
+    .area-card:hover::after { transform: scaleX(1); }
+    .area-num { font-family: var(--font-serif); font-size: 4.5rem; color: rgba(184,148,42,0.07); line-height: 1; position: absolute; top: 0.8rem; right: 1.2rem; font-weight: 400; font-style: italic; }
+    .area-card h3 { font-family: var(--font-sc); font-size: 0.75rem; letter-spacing: 0.18em; color: var(--gold-lt); margin-bottom: 1.2rem; }
+    .area-list { display: flex; flex-direction: column; gap: 0.45rem; }
+    .area-list li { font-size: 0.84rem; color: rgba(255,255,255,0.42); font-weight: 300; padding-left: 1rem; position: relative; line-height: 1.5; }
+    .area-list li::before { content: '—'; position: absolute; left: 0; color: var(--burgundy); opacity: 0.7; font-size: 0.7rem; }
+
+    /* ── TESTIMONIOS ── */
+    #testimonios { padding: 110px 5%; background: var(--cream-dk); position: relative; overflow: hidden; }
+    #testimonios::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(124,29,46,0.05) 1px, transparent 1px); background-size: 28px 28px; pointer-events: none; }
+    .testi-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+    .testi-header { text-align: center; margin-bottom: 4rem; }
+    .testi-header h2 { font-family: var(--font-serif); font-size: clamp(2.2rem, 4vw, 4rem); font-weight: 400; color: var(--gray-dk); }
+    .testi-header h2 em { font-style: italic; color: var(--burgundy); }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .testi-card { background: var(--white); padding: 2.4rem 2.2rem; border-top: 3px solid var(--burgundy); position: relative; }
+    .testi-quote { font-family: var(--font-serif); font-size: 3rem; color: var(--burgundy); opacity: 0.15; line-height: 1; position: absolute; top: 1rem; left: 1.5rem; font-style: italic; }
+    .testi-card p { font-size: 0.9rem; color: var(--gray-md); line-height: 1.88; font-weight: 300; font-style: italic; margin-bottom: 1.4rem; position: relative; z-index: 1; }
+    .testi-author { display: flex; align-items: center; gap: 0.8rem; }
+    .testi-avatar { width: 36px; height: 36px; background: var(--burgundy); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .testi-avatar i { color: var(--white); font-size: 0.78rem; }
+    .testi-name { font-family: var(--font-sc); font-size: 0.65rem; letter-spacing: 0.14em; color: var(--gray-dk); }
+    .testi-stars { display: flex; gap: 0.2rem; margin-top: 0.15rem; }
+    .testi-stars i { color: var(--gold); font-size: 0.6rem; }
+
+    /* ── FAQ ── */
+    #faq { padding: 110px 5%; background: var(--white); position: relative; overflow: hidden; }
+    #faq::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, transparent, transparent 48px, rgba(124,29,46,0.03) 48px, rgba(124,29,46,0.03) 49px); pointer-events: none; }
+    .faq-inner { max-width: 820px; margin: 0 auto; position: relative; z-index: 1; }
+    .faq-header { text-align: center; margin-bottom: 4rem; }
+    .faq-header h2 { font-family: var(--font-serif); font-size: clamp(2.2rem, 4vw, 4rem); font-weight: 400; color: var(--gray-dk); }
+    .faq-header h2 em { font-style: italic; color: var(--burgundy); }
+    .faq-item { border-bottom: 1px solid var(--border-dk); }
+    .faq-q { width: 100%; background: none; border: none; text-align: center; padding: 1.4rem 2.4rem; display: flex; align-items: center; justify-content: center; gap: 1rem; cursor: pointer; transition: background 0.25s; position: relative; }
+    .faq-q:hover { background: var(--cream); }
+    .faq-q span { font-family: var(--font-body); font-size: 0.92rem; font-weight: 500; color: var(--gray-dk); text-align: center; }
+    .faq-icon { width: 24px; height: 24px; border: 1px solid var(--border-dk); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.35s; position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
+    .faq-item.open .faq-icon { transform: translateY(-50%) rotate(45deg); border-color: var(--burgundy); }
+    .faq-icon i { font-size: 0.65rem; color: var(--burgundy); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1); }
+    .faq-a-inner { padding: 0 2.4rem 1.4rem; text-align: center; }
+    .faq-a-inner p { font-size: 0.88rem; color: var(--gray-md); line-height: 1.88; font-weight: 300; }
+    .faq-item.open .faq-a { max-height: 300px; }
+
+    /* ── CONTACTO ── */
+    #contacto { padding: 110px 5%; background: var(--burgundy-dk); position: relative; overflow: hidden; }
+    #contacto::before { content: ''; position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1400&q=80'); background-size: cover; background-position: center; filter: grayscale(100%) brightness(0.4); opacity: 0.18; }
+    #contacto::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(184,148,42,0.06) 1.5px, transparent 1.5px); background-size: 28px 28px; pointer-events: none; }
+    .contacto-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+    .contacto-top { text-align: center; margin-bottom: 5rem; }
+    .contacto-top .eyebrow { color: var(--gold-lt); justify-content: center; display: flex; }
+    .contacto-top h2 { font-family: var(--font-serif); font-size: clamp(2.4rem, 5vw, 5rem); font-weight: 300; color: var(--white); line-height: 1; }
+    .contacto-top h2 em { font-style: italic; color: var(--gold-lt); display: block; }
+    .contacto-rule { width: 40px; height: 1px; background: var(--gold); display: block; margin: 1.2rem auto; }
+    .contacto-forms { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0; margin-bottom: 4rem; }
+    .form-sep { width: 1px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.12) 20%, rgba(255,255,255,0.12) 80%, transparent); margin: 0 2.5rem; }
+    .form-block {}
+    .form-label-head { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.8rem; }
+    .form-label-head i { color: var(--gold-lt); font-size: 1rem; }
+    .form-label-head span { font-family: var(--font-sc); font-size: 0.6rem; letter-spacing: 0.24em; color: rgba(255,255,255,0.45); }
+    .f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    .f-group { margin-bottom: 0.8rem; }
+    .f-group label { display: block; font-family: var(--font-sc); font-size: 0.52rem; letter-spacing: 0.22em; color: rgba(255,255,255,0.35); margin-bottom: 0.4rem; }
+    .f-group input, .f-group select, .f-group textarea { width: 100%; padding: 0.82rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(184,148,42,0.3); color: var(--white); font-family: var(--font-body); font-size: 0.87rem; outline: none; transition: border-color 0.3s; appearance: auto; }
+    .f-group input::placeholder, .f-group textarea::placeholder { color: rgba(255,255,255,0.2); }
+    .f-group input:focus, .f-group select:focus, .f-group textarea:focus { border-bottom-color: var(--gold-lt); }
+    .f-group select option { background: var(--burgundy-dk); }
+    .f-group textarea { resize: vertical; min-height: 100px; }
+    .f-submit { width: 100%; margin-top: 0.5rem; }
+    /* Info contacto */
+    .contacto-info { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; text-align: center; }
+    .c-info-item span { font-family: var(--font-sc); font-size: 0.55rem; letter-spacing: 0.24em; color: rgba(184,148,42,0.65); display: block; margin-bottom: 0.5rem; }
+    .c-info-item p { font-size: 0.86rem; color: rgba(255,255,255,0.6); font-weight: 300; line-height: 1.5; }
+    .c-info-item a { color: rgba(255,255,255,0.6); transition: color 0.25s; }
+    .c-info-item a:hover { color: var(--gold-lt); }
+
+    /* ── MAPA ── */
+    #mapa { height: 380px; }
+    #mapa iframe { width: 100%; height: 100%; border: none; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--gray-dk); padding: 48px 5% 24px; border-top: 1px solid rgba(184,148,42,0.15); }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; }
+    .footer-brand img { height: 52px; filter: var(--logo-filter); opacity: 0.8; margin-bottom: 1.2rem; }
+    .footer-brand .textlogo { margin-bottom: 1rem; }
+    .footer-brand p { font-size: 0.82rem; color: rgba(255,255,255,0.3); line-height: 1.8; font-weight: 300; }
+    .footer-col h4 { font-family: var(--font-sc); font-size: 0.62rem; letter-spacing: 0.2em; color: var(--gold-lt); margin-bottom: 1.2rem; }
+    .footer-col ul { display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-col ul li a { font-size: 0.84rem; color: rgba(255,255,255,0.38); transition: color 0.25s; font-weight: 300; }
+    .footer-col ul li a:hover { color: var(--gold-lt); }
+    .footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom p { font-size: 0.76rem; color: rgba(255,255,255,0.22); }
+    .footer-dev { font-size: 0.72rem; color: rgba(255,255,255,0.22); }
+    .footer-dev a { color: var(--gold-dk); transition: color 0.25s; }
+    .footer-dev a:hover { color: var(--gold-lt); }
+
+    /* ── WA FLOAT ── */
+    .wa-float { position: fixed; bottom: 26px; right: 26px; width: 52px; height: 52px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 1.4rem; z-index: 999; animation: wapulse 2.5s infinite; opacity: 0; pointer-events: none; transition: opacity 0.4s, transform 0.3s; }
+    .wa-float.visible { opacity: 1; pointer-events: auto; }
+    .wa-float:hover { transform: scale(1.08); }
+    @keyframes wapulse { 0%,100% { box-shadow: 0 4px 18px rgba(37,211,102,0.3); } 50% { box-shadow: 0 4px 28px rgba(37,211,102,0.55), 0 0 0 7px rgba(37,211,102,0.07); } }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.75s cubic-bezier(0.4,0,0.2,1), transform 0.75s cubic-bezier(0.4,0,0.2,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-24px); transition: opacity 0.75s cubic-bezier(0.4,0,0.2,1), transform 0.75s cubic-bezier(0.4,0,0.2,1); }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(24px); transition: opacity 0.75s cubic-bezier(0.4,0,0.2,1), transform 0.75s cubic-bezier(0.4,0,0.2,1); }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .stagger-child { opacity: 0; transform: translateY(16px); transition: opacity 0.55s cubic-bezier(0.4,0,0.2,1), transform 0.55s cubic-bezier(0.4,0,0.2,1); }
+    .stagger-child.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .sobre-inner { grid-template-columns: 1fr; gap: 3.5rem; text-align: center; }
+      .sobre-rule { margin: 1.2rem auto; }
+      .areas-grid { grid-template-columns: repeat(2, 1fr); }
+      .testi-grid { grid-template-columns: 1fr 1fr; }
+      .contacto-forms { grid-template-columns: 1fr; gap: 3rem; }
+      .form-sep { display: none; }
+      .contacto-info { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      nav { display: none; }
+      #hamburger { display: flex; }
+      header { justify-content: center; position: fixed; }
+      .h-logo-sep { display: none; }
+      #hamburger { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); }
+      #hero { align-items: center; justify-content: center; padding-top: 80px; }
+      .hero-inner { padding: 0; text-align: center; }
+      .hero-eyebrow { justify-content: center; }
+      .hero-eyebrow-line { display: none; }
+      .hero-logo { display: flex; justify-content: center; }
+      .hero-ctas { justify-content: center; flex-direction: column; align-items: center; }
+      .hero-ctas .btn { min-width: 220px; }
+      .areas-grid { grid-template-columns: 1fr; }
+      .area-card { text-align: center; }
+      .area-list li { padding-left: 0; text-align: center; }
+      .area-list li::before { display: none; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .contacto-top { text-align: center; }
+      .contacto-info { text-align: center; }
+      .f-row { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+      .footer-brand img { margin: 0 auto 1rem; }
+      .footer-brand .textlogo { align-items: center; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      #sobre, #areas, #testimonios, #faq, #contacto { padding: 70px 5%; }
+      .sobre-logo { display: flex; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="h-logo">
+    <img src="./logo.png" alt="Dr. Pablo González &amp; Asoc." />
+  </div>
+  <div class="h-logo-sep"></div>
+  <nav>
+    <a href="#sobre">Nosotros</a>
+    <a href="#areas">&Aacute;reas</a>
+    <a href="#testimonios">Clientes</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contacto" class="nav-cta">Consultar</a>
+  </nav>
+  <button id="hamburger" aria-label="Men&uacute;"><span></span><span></span><span></span></button>
+</header>
+<nav id="mobile-nav">
+  <a href="#sobre">Nosotros</a>
+  <a href="#areas">&Aacute;reas de pr&aacute;ctica</a>
+  <a href="#testimonios">Clientes</a>
+  <a href="#faq">Preguntas frecuentes</a>
+  <a href="#contacto">Consultar</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-accent"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span>Confianza · Comunicación · Seriedad</span>
+      </div>
+      <div class="hero-logo">
+        <img src="./logo.png" alt="Dr. Pablo González & Asoc." />
+      </div>
+      <h1 class="hero-h1"><em>Estudio Jurídico</em><br/><strong>Dr. Pablo Adrián González</strong><br/><em>&amp; Asociados</em></h1>
+      <div class="hero-subtitle">Desde 1973 &middot; CABA y Provincia de Buenos Aires</div>
+      <p class="hero-lead">Más de 50 años al servicio de nuestros clientes. Resolvemos sus problemáticas legales de manera rápida y efectiva, con un equipo de profesionales especializados en distintas áreas del Derecho.</p>
+      <div class="hero-ctas">
+        <a href="#contacto" class="btn btn-gold">Agendar consulta</a>
+        <a href="#areas" class="btn btn-outline-lt">Ver áreas</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stat">
+        <div class="hero-stat-num">50+</div>
+        <div class="hero-stat-label">años de trayectoria</div>
+      </div>
+      <div class="hero-sep"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">5</div>
+        <div class="hero-stat-label">áreas de práctica</div>
+      </div>
+      <div class="hero-sep"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">2</div>
+        <div class="hero-stat-label">jurisdicciones</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <div class="ticker-item"><div class="ticker-dot"></div>Derecho Civil y Familiar</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Derecho Laboral</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Derecho Comercial</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Derecho Inmobiliario</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Derecho Administrativo</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Desde 1973</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>CABA y Provincia de Bs. As.</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Derecho Civil y Familiar</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Derecho Laboral</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Derecho Comercial</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Derecho Inmobiliario</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Derecho Administrativo</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Desde 1973</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>CABA y Provincia de Bs. As.</div>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="sobre-inner">
+    <div class="sobre-left reveal-left">
+      <div class="sobre-logo"><img src="./logo.png" alt="Dr. Pablo González & Asoc." /></div>
+      <h2>Un estudio con <em>historia.</em></h2>
+      <div class="sobre-rule"></div>
+      <p>Desde nuestra fundaci&oacute;n en <strong>1973</strong>, siempre hemos estado al servicio de nuestros clientes resolviendo todas sus problem&aacute;ticas de la manera m&aacute;s r&aacute;pida y efectiva.</p>
+      <p>Contamos con un equipo de profesionales, auxiliares y asistentes de diversa &iacute;ndole para afrontar los reclamos legales desde una &oacute;ptica <strong>integral y abarcativa</strong>.</p>
+      <p>Nos desempe&ntilde;amos en diversas &aacute;reas del derecho atendiendo casos tanto en <strong>CABA como en toda la Provincia de Buenos Aires</strong>.</p>
+      <a href="#contacto" class="btn btn-burg" style="margin-top:0.8rem;">Agendar consulta</a>
+    </div>
+    <div class="sobre-right reveal-right" style="transition-delay:0.12s">
+      <div class="sobre-item">
+        <div class="sobre-item-icon"><i class="fa-solid fa-handshake"></i></div>
+        <div><h4>Confianza</h4><p>Construida en m&aacute;s de 50 a&ntilde;os de relaciones con nuestros clientes. Su problema es nuestra prioridad.</p></div>
+      </div>
+      <div class="sobre-item">
+        <div class="sobre-item-icon"><i class="fa-solid fa-comments"></i></div>
+        <div><h4>Comunicaci&oacute;n</h4><p>Mantenemos a nuestros clientes informados en cada etapa del proceso. Claridad y transparencia siempre.</p></div>
+      </div>
+      <div class="sobre-item">
+        <div class="sobre-item-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div><h4>Seriedad</h4><p>Compromiso profesional, confidencialidad absoluta y dedicaci&oacute;n plena a cada caso que asumimos.</p></div>
+      </div>
+      <div class="sobre-item">
+        <div class="sobre-item-icon"><i class="fa-solid fa-users"></i></div>
+        <div><h4>Equipo integral</h4><p>Profesionales, auxiliares y asistentes especializados para dar respuesta completa a todo tipo de reclamos.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÁREAS -->
+<section id="areas">
+  <div class="areas-inner">
+    <div class="areas-header reveal">
+      <span class="eyebrow" style="color:var(--gold-lt);display:block;margin-bottom:0.8rem;font-family:var(--font-sc);font-size:0.6rem;letter-spacing:0.3em;">Especialidades</span>
+      <h2>&Aacute;reas de <em>pr&aacute;ctica</em></h2>
+      <div class="rule-gold center" style="margin-top:1rem;"></div>
+    </div>
+    <div class="areas-grid reveal">
+      <div class="area-card stagger-child">
+        <div class="area-num">I</div>
+        <h3>Civil y Familiar</h3>
+        <ul class="area-list">
+          <li>Divorcios y separaciones</li>
+          <li>Alimentos y cuidado personal</li>
+          <li>Sucesiones y herencias</li>
+          <li>Da&ntilde;os y perjuicios</li>
+          <li>Contratos civiles</li>
+        </ul>
+      </div>
+      <div class="area-card stagger-child">
+        <div class="area-num">II</div>
+        <h3>Derecho Laboral</h3>
+        <ul class="area-list">
+          <li>Despidos e indemnizaciones</li>
+          <li>Accidentes de trabajo</li>
+          <li>Reclamos laborales</li>
+          <li>Asesoramiento a empleadores</li>
+        </ul>
+      </div>
+      <div class="area-card stagger-child">
+        <div class="area-num">III</div>
+        <h3>Comercial / Corporativo</h3>
+        <ul class="area-list">
+          <li>Contratos comerciales</li>
+          <li>Constituci&oacute;n de sociedades</li>
+          <li>Conflictos societarios</li>
+          <li>Asesoramiento empresarial</li>
+        </ul>
+      </div>
+      <div class="area-card stagger-child">
+        <div class="area-num">IV</div>
+        <h3>Derecho Inmobiliario</h3>
+        <ul class="area-list">
+          <li>Compraventa de inmuebles</li>
+          <li>Locaciones y desalojos</li>
+          <li>Derechos reales</li>
+          <li>Propiedad horizontal</li>
+        </ul>
+      </div>
+      <div class="area-card stagger-child">
+        <div class="area-num">V</div>
+        <h3>Derecho Administrativo</h3>
+        <ul class="area-list">
+          <li>Recursos administrativos</li>
+          <li>Contratos con el Estado</li>
+          <li>Responsabilidad del Estado</li>
+          <li>Habilitaciones y permisos</li>
+        </ul>
+      </div>
+      <div class="area-card stagger-child" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+        <div style="margin-bottom:1.4rem;opacity:0.6;"><img src="./logo.png" style="height:52px;filter:var(--logo-filter-lt);margin:0 auto;" alt="Logo" /></div>
+        <h3>¿Tiene otra consulta?</h3>
+        <p style="font-size:0.84rem;color:rgba(255,255,255,0.42);font-weight:300;line-height:1.72;margin-bottom:1.4rem;">Contactenos y le informaremos si podemos asistirle.</p>
+        <a href="#contacto" class="btn btn-burg" style="font-size:0.75rem;">Consultar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <div class="testi-inner">
+    <div class="testi-header reveal">
+      <span class="eyebrow" style="display:block;text-align:center;margin-bottom:0.8rem;">Lo que dicen nuestros clientes</span>
+      <h2>Casos <em>resueltos.</em></h2>
+      <div class="rule center" style="margin-top:1rem;"></div>
+    </div>
+    <div class="testi-grid reveal">
+      <div class="testi-card stagger-child">
+        <div class="testi-quote">&ldquo;</div>
+        <p>El estudio resolvi&oacute; mi caso laboral en tiempo r&eacute;cord. Siempre estuvieron disponibles para responder mis dudas y el resultado fue mejor de lo esperado.</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><i class="fa-solid fa-user"></i></div>
+          <div>
+            <div class="testi-name">Cliente &mdash; Caso Laboral</div>
+            <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card stagger-child">
+        <div class="testi-quote">&ldquo;</div>
+        <p>Excelente atenci&oacute;n y profesionalismo. Me acompa&ntilde;aron durante todo el proceso sucesorio con mucha claridad y dedicaci&oacute;n. Los recomiendo ampliamente.</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><i class="fa-solid fa-user"></i></div>
+          <div>
+            <div class="testi-name">Cliente &mdash; Sucesi&oacute;n</div>
+            <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card stagger-child">
+        <div class="testi-quote">&ldquo;</div>
+        <p>Desde el primer contacto transmitieron confianza y seriedad. Mi divorcio fue un proceso complicado y ellos lo manejaron con mucha habilidad y sensibilidad.</p>
+        <div class="testi-author">
+          <div class="testi-avatar"><i class="fa-solid fa-user"></i></div>
+          <div>
+            <div class="testi-name">Cliente &mdash; Derecho de Familia</div>
+            <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-inner">
+    <div class="faq-header reveal">
+      <span class="eyebrow" style="display:block;text-align:center;margin-bottom:0.8rem;">Preguntas frecuentes</span>
+      <h2>Dudas <em>comunes.</em></h2>
+      <div class="rule center" style="margin-top:1rem;"></div>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q"><span>&iquest;En qu&eacute; zonas geogr&aacute;ficas atienden?</span><div class="faq-icon"><i class="fa-solid fa-plus"></i></div></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Atendemos casos en Ciudad Aut&oacute;noma de Buenos Aires (CABA) y en toda la Provincia de Buenos Aires. Para consultas preliminares tambi&eacute;n ofrecemos atenci&oacute;n telef&oacute;nica y por correo electr&oacute;nico.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>&iquest;Cu&aacute;nto tiempo lleva en actividad el estudio?</span><div class="faq-icon"><i class="fa-solid fa-plus"></i></div></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>El estudio fue fundado en 1973, lo que nos otorga m&aacute;s de 50 a&ntilde;os de experiencia ininterrumpida al servicio de nuestros clientes en distintas &aacute;reas del derecho.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>&iquest;C&oacute;mo puedo comenzar una consulta?</span><div class="faq-icon"><i class="fa-solid fa-plus"></i></div></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>Puede contactarnos por tel&eacute;fono al 11 6094-1718, por correo a legalasesoria@yahoo.com.ar, o completando el formulario de contacto de este sitio. Nos comunicaremos a la brevedad para coordinar una entrevista.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>&iquest;Atienden a personas f&iacute;sicas y empresas?</span><div class="faq-icon"><i class="fa-solid fa-plus"></i></div></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>S&iacute;. Brindamos asesoramiento tanto a personas f&iacute;sicas como a empresas y organizaciones, adapt&aacute;ndonos a las necesidades de cada cliente con un enfoque integral y personalizado.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>&iquest;Trabajan con urgencias legales?</span><div class="faq-icon"><i class="fa-solid fa-plus"></i></div></button>
+        <div class="faq-a"><div class="faq-a-inner"><p>S&iacute;, atendemos situaciones urgentes. Contamos con la estructura y el equipo necesarios para dar respuesta r&aacute;pida a reclamos que requieren intervenci&oacute;n inmediata.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contacto-inner">
+    <div class="contacto-top reveal">
+      <span class="eyebrow">Contacto</span>
+      <h2>Coordin&aacute; una <em>entrevista.</em></h2>
+      <div class="contacto-rule"></div>
+    </div>
+    <div class="contacto-forms reveal">
+      <div class="form-block">
+        <form id="emailForm">
+          <div class="f-row">
+            <div class="f-group"><label>Nombre</label><input type="text" id="e-nombre" placeholder="Su nombre" required /></div>
+            <div class="f-group"><label>Tel&eacute;fono</label><input type="tel" id="e-tel" placeholder="11 0000-0000" /></div>
+          </div>
+          <div class="f-group">
+            <label>&Aacute;rea</label>
+            <select id="e-area">
+              <option value="">Seleccionar &aacute;rea</option>
+              <option>Civil y Familiar</option>
+              <option>Derecho Laboral</option>
+              <option>Comercial / Corporativo</option>
+              <option>Derecho Inmobiliario</option>
+              <option>Derecho Administrativo</option>
+              <option>Otra consulta</option>
+            </select>
+          </div>
+          <div class="f-group"><label>Consulta</label><textarea id="e-msg" placeholder="Describ&aacute; brevemente su situaci&oacute;n."></textarea></div>
+          <button type="submit" class="btn btn-gold f-submit">Enviar por Email</button>
+        </form>
+      </div>
+      <div class="form-sep"></div>
+      <div class="form-block">
+        <form id="waForm">
+          <div class="f-row">
+            <div class="f-group"><label>Nombre</label><input type="text" id="w-nombre" placeholder="Su nombre" required /></div>
+            <div class="f-group"><label>Tel&eacute;fono</label><input type="tel" id="w-tel" placeholder="11 0000-0000" /></div>
+          </div>
+          <div class="f-group">
+            <label>&Aacute;rea</label>
+            <select id="w-area">
+              <option value="">Seleccionar &aacute;rea</option>
+              <option>Civil y Familiar</option>
+              <option>Derecho Laboral</option>
+              <option>Comercial / Corporativo</option>
+              <option>Derecho Inmobiliario</option>
+              <option>Derecho Administrativo</option>
+              <option>Otra consulta</option>
+            </select>
+          </div>
+          <div class="f-group"><label>Consulta</label><textarea id="w-msg" placeholder="Describ&aacute; brevemente su situaci&oacute;n."></textarea></div>
+          <button type="submit" class="btn btn-burg f-submit">Enviar por WhatsApp</button>
+        </form>
+      </div>
+    </div>
+    <div class="contacto-info reveal">
+      <div class="c-info-item">
+        <span>Tel&eacute;fono</span>
+        <p><a href="tel:1160941718">11 6094-1718</a></p>
+      </div>
+      <div class="c-info-item">
+        <span>Email</span>
+        <p><a href="mailto:legalasesoria@yahoo.com.ar">legalasesoria@yahoo.com.ar</a></p>
+      </div>
+      <div class="c-info-item">
+        <span>Cobertura</span>
+        <p>CABA y Provincia de Buenos Aires</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAPA -->
+<div id="mapa">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d209715.27722752!2d-58.6370443!3d-34.6158044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires!5e0!3m2!1ses!2sar!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="./logo.png" alt="Dr. Pablo González & Asoc." />
+      <div class="textlogo" style="margin-bottom:1rem;">
+        <div class="textlogo-top" style="color:var(--gold-lt);">Estudio Jurídico</div>
+        <div class="textlogo-bot" style="color:rgba(255,255,255,0.65);">Dr. Pablo A. González & Asoc.</div>
+      </div>
+      <p>Desde 1973 al servicio de nuestros clientes. CABA y Provincia de Buenos Aires.</p>
+    </div>
+    <div class="footer-col">
+      <h4>&Aacute;reas de pr&aacute;ctica</h4>
+      <ul>
+        <li><a href="#areas">Civil y Familiar</a></li>
+        <li><a href="#areas">Laboral</a></li>
+        <li><a href="#areas">Comercial</a></li>
+        <li><a href="#areas">Inmobiliario</a></li>
+        <li><a href="#areas">Administrativo</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="tel:1160941718">11 6094-1718</a></li>
+        <li><a href="mailto:legalasesoria@yahoo.com.ar">legalasesoria@yahoo.com.ar</a></li>
+        <li><a href="#contacto">CABA y Provincia de Bs. As.</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Dr. Pablo Adri&aacute;n Gonz&aacute;lez &amp; Asociados. Todos los derechos reservados.</p>
+    <span class="footer-dev">Desarrollado por <a href="https://www.instagram.com/sageedev/" target="_blank">@sageeDev</a></span>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/541160941718" target="_blank" class="wa-float" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script>
+  // HEADER
+  const header = document.querySelector('header');
+  const hbg = document.getElementById('hamburger');
+  const mNav = document.getElementById('mobile-nav');
+  const waFloat = document.querySelector('.wa-float');
+
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 60;
+    header.classList.toggle('scrolled', scrolled);
+    waFloat.classList.toggle('visible', window.scrollY > window.innerHeight * 0.7);
+    if (!mNav.classList.contains('open')) {
+      hbg.classList.toggle('dark', scrolled);
+    }
+  });
+
+  // HAMBURGER
+  hbg.addEventListener('click', () => {
+    const open = !mNav.classList.contains('open');
+    hbg.classList.toggle('open', open);
+    hbg.classList.toggle('dark', open);
+    mNav.classList.toggle('open', open);
+  });
+  document.querySelectorAll('#mobile-nav a').forEach(a => a.addEventListener('click', () => {
+    hbg.classList.remove('open');
+    mNav.classList.remove('open');
+    hbg.classList.toggle('dark', window.scrollY > 60);
+  }));
+
+  // FAQ
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // FORM EMAIL
+  document.getElementById('emailForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const n = document.getElementById('e-nombre').value;
+    const t = document.getElementById('e-tel').value;
+    const a = document.getElementById('e-area').value;
+    const m = document.getElementById('e-msg').value;
+    const subject = encodeURIComponent('Consulta Legal – ' + (a || 'General') + ' – ' + n);
+    let body = 'Nombre: ' + n + '\n';
+    if (t) body += 'Teléfono: ' + t + '\n';
+    if (a) body += 'Área: ' + a + '\n';
+    if (m) body += '\nConsulta:\n' + m;
+    window.location.href = 'mailto:legalasesoria@yahoo.com.ar?subject=' + subject + '&body=' + encodeURIComponent(body);
+  });
+
+  // FORM WA
+  document.getElementById('waForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const n = document.getElementById('w-nombre').value;
+    const t = document.getElementById('w-tel').value;
+    const a = document.getElementById('w-area').value;
+    const m = document.getElementById('w-msg').value;
+    let txt = 'Hola, me comunico desde el sitio web del Estudio González. Mi nombre es *' + n + '*.';
+    if (a) txt += '\n\n*Consulta sobre:* ' + a;
+    if (m) txt += '\n\n*Situación:*\n' + m;
+    if (t) txt += '\n\n*Teléfono:* ' + t;
+    window.open('https://wa.me/541160941718?text=' + encodeURIComponent(txt), '_blank');
+  });
+
+  // REVEAL
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('.stagger-child').forEach((child, i) => {
+        child.style.transitionDelay = (i * 0.1) + 's';
+        child.classList.add('visible');
+      });
+      obs.unobserve(e.target);
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
